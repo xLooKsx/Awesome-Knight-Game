@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Animator playerAnimator;
     private CharacterController characterController;
@@ -19,20 +19,21 @@ public class PlayerMove : MonoBehaviour
 
     private float gravity = 9.8f;
     private float height;
-    void Awake()
+    void Start()
     {
         playerAnimator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
     }
 
-
+    // Update is called once per frame
     void Update()
     {
         CalculateHeight();
         CheckIfFinishedMovement();
     }
 
-    bool IsGrounded() {
+    bool IsGrounded()
+    {
         //Verifica se esta acontecendo uma colisao com o chao
         return collisionFlags == CollisionFlags.CollidedBelow;
     }
@@ -53,7 +54,8 @@ public class PlayerMove : MonoBehaviour
          * Se o movimento terminou o poersonagem é liberado para se mover novamente, senao terminou
          * é verificado se ainda falta muito para o personagem terminar a animaçao
          */
-        if (playerFinishedMovement) {
+        if (playerFinishedMovement)
+        {
             MoveThePlayer();
             playerMovement.y = height * Time.deltaTime;
             collisionFlags = characterController.Move(playerMovement);
@@ -66,11 +68,12 @@ public class PlayerMove : MonoBehaviour
                 //normalizeTime da animaçao é representado em um range de 0 até 1, sendo 0 o inicio e 1 o final
                 playerFinishedMovement = true;
             }
-            
+
         }
     }
 
-    void MoveThePlayer() {
+    void MoveThePlayer()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             //Pega  o direcionamento da camera até o ponto que foi clicado

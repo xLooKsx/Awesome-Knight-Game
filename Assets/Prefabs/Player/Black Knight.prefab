@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 9196434722118531958}
   - component: {fileID: 9196434722109494446}
   - component: {fileID: 1681432745608497510}
-  - component: {fileID: 3604887457488901543}
+  - component: {fileID: 1803062556}
   m_Layer: 0
   m_Name: Black Knight
   m_TagString: Player
@@ -734,7 +734,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1.2, z: -0.25}
---- !u!114 &3604887457488901543
+--- !u!114 &1803062556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9196434722118887190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faedae21c64d661498c00e516f40a518, type: 3}
+  m_Script: {fileID: 11500000, guid: adca71c2760168a40acbc00bbdf4dd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9196434722118887192
